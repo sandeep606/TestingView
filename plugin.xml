@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-mynativeviewer" version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>MyNativeViewer</name>
+    <js-module name="MyNativeViewer" src="www/MyNativeViewer.js">
+        <clobbers target="MyNativeViewer" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="MyNativeViewer">
+                <param name="ios-package" value="MyNativeViewer" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/MyNativeViewer.m" />
+    </platform>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="MyNativeViewer">
+                <param name="android-package" value="cordova.plugin.mynativeviewer.MyNativeViewer" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/MyNativeViewer.java" target-dir="src/cordova/plugin/mynativeviewer/MyNativeViewer" />
+    </platform>
+</plugin>
