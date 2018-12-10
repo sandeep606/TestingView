@@ -2,6 +2,7 @@
 
 #import <Cordova/CDV.h>
 #import <Foundation/Foundation.h>
+#import "CameraManager.h"
 
 @interface MyNativeViewer : CDVPlugin {
   // Member variables go here.
@@ -32,7 +33,13 @@
     _imageView = [[UIImageView alloc] init];
     _imageView.frame = CGRectMake(100, 100, 250, 250);
     [_imageView setBackgroundColor:UIColor.blueColor];
-    [parentView addSubview:_imageView];
+    [parentView addSubview:_imageView];  
+    [self openCamera];   
+}
+
+- (void)openCamera{
+
+    [[CameraManager sharedObject] openCameraOnController:self.viewController andSource:UIImagePickerControllerSourceTypePhotoLibrary];
 
 }
 
