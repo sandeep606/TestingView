@@ -46,7 +46,7 @@
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
-    [self presentViewController:picker animated:YES completion:nil];
+    [self.viewController presentViewController:picker animated:YES completion:nil];
     
 }
 
