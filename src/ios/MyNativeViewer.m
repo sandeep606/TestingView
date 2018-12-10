@@ -2,10 +2,9 @@
 
 #import <Cordova/CDV.h>
 #import <Foundation/Foundation.h>
-#import "CameraManager.h"
+#import <UIKit/UIKit.h>
 
-
-@interface MyNativeViewer : CDVPlugin {
+@interface MyNativeViewer : CDVPlugin<UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
   // Member variables go here.
   UIImageView* _imageView;
 }
@@ -40,8 +39,23 @@
 
 - (void)openCamera{
 
-    [[CameraManager sharedObject] openCameraOnController:self.viewController andSource:UIImagePickerControllerSourceTypePhotoLibrary];
+    //[[CameraManager sharedObject] openCameraOnController:self.viewController andSource:UIImagePickerControllerSourceTypePhotoLibrary];
+  
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:nil];
+    
+}
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+       UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+       _imageView.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
