@@ -2,7 +2,7 @@
 
 #import <Cordova/CDV.h>
 #import <Foundation/Foundation.h>
-// #import "CameraManager.h"
+#import "CameraManager.h"
 
 
 @interface MyNativeViewer : CDVPlugin {
