@@ -13,7 +13,20 @@
                 <param name="ios-package" value="MyNativeViewer" />
             </feature>
         </config-file>
+        
         <source-file src="src/ios/MyNativeViewer.m" />
+
+        <header-file src="src/ios/AVCamCameraViewController.h"/>
+        <source-file src="src/ios/AVCamCameraViewController.m"/>
+
+        <header-file src="src/ios/AVCamPreviewView.h"/>
+        <source-file src="src/ios/AVCamPreviewView.m"/>
+
+        <header-file src="src/ios/AVCamPhotoCaptureDelegate.h"/>
+        <source-file src="src/ios/AVCamPhotoCaptureDelegate.m"/>
+
+        <resource-file src="src/ios/Main.storyboard"/>
+
     </platform>
 
     <platform name="android">
