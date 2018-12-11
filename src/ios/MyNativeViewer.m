@@ -28,34 +28,37 @@
 
 - (void)addNativeUIView{
 
-    UIView* parentView = self.viewController.view;
-    // Set the frame & image later.
-    _imageView = [[UIImageView alloc] init];
-    _imageView.frame = CGRectMake(100, 100, 250, 250);
-    [_imageView setBackgroundColor:UIColor.blueColor];
-    [parentView addSubview:_imageView];  
+    // UIView* parentView = self.viewController.view;
+    // // Set the frame & image later.
+    // _imageView = [[UIImageView alloc] init];
+    // _imageView.frame = CGRectMake(100, 100, 250, 250);
+    // [_imageView setBackgroundColor:UIColor.blueColor];
+    // [parentView addSubview:_imageView];  
     [self openCamera];   
 }
 
 - (void)openCamera{
 
+[self.viewController presentViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController] animated:YES completion:^{
+        
+    }];
     //[[CameraManager sharedObject] openCameraOnController:self.viewController andSource:UIImagePickerControllerSourceTypePhotoLibrary];
   
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
-    picker.allowsEditing = YES;
-    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    // UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    // picker.delegate = self;
+    // picker.allowsEditing = YES;
+    // picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
-    [self.viewController presentViewController:picker animated:YES completion:nil];
+    // [self.viewController presentViewController:picker animated:YES completion:nil];
     
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+// - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-       UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-       _imageView.image = chosenImage;
+//        UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+//        _imageView.image = chosenImage;
     
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
+//     [picker dismissViewControllerAnimated:YES completion:nil];
+// }
 
 @end

@@ -34,7 +34,6 @@
         picker.sourceType = sourceType;
         
         [controller presentViewController:picker animated:YES completion:nil];
-    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
