@@ -3,7 +3,7 @@
 #import <Cordova/CDV.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "AVCamCameraViewController.h"
+#import "AVCamCameraViewController"
 
 @interface MyNativeViewer : CDVPlugin<UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
   // Member variables go here.
@@ -29,7 +29,6 @@
 
 - (void)addNativeUIView{
 
-AVCame
     [self.viewController presentViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController] animated:YES completion:^{
         
     }];
