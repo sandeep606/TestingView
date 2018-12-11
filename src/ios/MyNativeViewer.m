@@ -3,7 +3,6 @@
 #import <Cordova/CDV.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "AVCamCameraViewController"
 
 @interface MyNativeViewer : CDVPlugin<UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
   // Member variables go here.
